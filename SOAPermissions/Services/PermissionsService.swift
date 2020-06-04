@@ -20,7 +20,6 @@ extension ServiceRegistryImplementation {
 }
 
 protocol PermissionsService: Service {
-    //func usePermissions(_ content: Any, withActivityItems activityItems: [Any], presentingController: UIViewController)
     func Granted() -> [String]
     func NotGranted() -> [String]
 }
