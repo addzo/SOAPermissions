@@ -26,8 +26,15 @@
  */
 import Foundation
 
+// At the moment the registry is global. It's convenient but sloppy, I think, for production implementation.
 let ServiceRegistry = ServiceRegistryImplementation()
 
+/**
+ This is all the code to define a particular service:
+ - registering
+ - accessing
+ It also has the implementation of the registry.  I'm not sure I like having the registry in the same class yet.
+ */
 protocol Service {
     // Every service should have a unique name
     var serviceName: String { get }
@@ -46,7 +53,7 @@ extension Service {
 final class LazyService: Service {
     internal let serviceName: String
     
-    // Accessor instantiates the srevice the first time this is called
+    // Accessor instantiates the service only when this is called
     internal lazy var serviceGetter: (() -> Service) = {
         if self.service == nil {
             self.service = self.implementationGetter()
@@ -68,6 +75,8 @@ final class LazyService: Service {
 }
 
 struct ServiceRegistryImplementation {
+    // This was a new thought to me when I saw someone doing it.
+    // This is not a singlton but because it has a static dictionary so the data structure inside is a singleton.
     private static var serviceDictionary: [String : LazyService] = [:]
     
     internal func add(service: LazyService) {
