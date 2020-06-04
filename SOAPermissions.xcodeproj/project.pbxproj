@@ -107,7 +107,7 @@
 		B4FCC967247CD85F003236E7 /* SOAPermissions */ = {
 			isa = PBXGroup;
 			children = (
-				B4FCC99F247DE419003236E7 /* Service */,
+				B4FCC99F247DE419003236E7 /* Services */,
 				B4FCC968247CD85F003236E7 /* AppDelegate.swift */,
 				B4FCC96A247CD85F003236E7 /* SceneDelegate.swift */,
 				B4FCC96C247CD85F003236E7 /* ViewController.swift */,
@@ -138,14 +138,14 @@
 			path = SOAPermissionsUITests;
 			sourceTree = "<group>";
 		};
-		B4FCC99F247DE419003236E7 /* Service */ = {
+		B4FCC99F247DE419003236E7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				B4FCC99B247CD8A4003236E7 /* Service.swift */,
 				B4FCC99D247DC0C8003236E7 /* ServiceTemplate.swift */,
 				B4FCC9A0247DE766003236E7 /* PermissionsService.swift */,
 			);
-			path = Service;
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
