@@ -44,7 +44,7 @@ protocol Service {
 }
 
 extension Service {
-    // Default implementation for a sdervice to register itself
+    // Default convenience implementation for a service to register itself
     internal func register() {
         ServiceRegistry.add(service: self)
     }
