@@ -5,7 +5,25 @@
 //  Created by William Repenning on 5/25/20.
 //  Copyright © 2020 William Repenning. All rights reserved.
 //
-
+/**
+ Implementing Separation of Concerns therough services in Swift
+ This approach uses absctract functional interfaces and dependency injection to separate the logic from the user layer.
+ The Protocol defines an interface but nothing about the implementation.  Thia makes it easier to provide multiple
+ implementations of functionalities, including mocking services for testing.
+ All of this means that the class(es) using the service never has to change with the different implementations.
+ To use the services they have to be "registered".  The registry is a central place where the code can get the services
+ that are available.  The registry can be extended for difference service implementations as well - it can return specific
+ or groups of services.  After that, the services can be injected into the code base directly e.g.
+ PermissionsViewController(permissionsService).
+ Here the registry  is a kind of Service Locator Pattern I believe.
+ 
+ Lazy Instantiation
+ In Swift we can lazily instantiate a service the same as any other object.  We can set up the lazy instantiation with a
+ closure that is difered until the service is first invoked.  When it is the closure will instantiate it, and return it
+ to the caller.
+ 
+ 
+ */
 import Foundation
 
 let ServiceRegistry = ServiceRegistryImplementation()
