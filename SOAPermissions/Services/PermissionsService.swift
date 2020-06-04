@@ -30,10 +30,12 @@ extension PermissionsService {
 
 internal class NotificationPermissionsEvaluator: PermissionsService {
     func Granted() -> [String] {
+        // Just here as a place holder to understand what you meant by looping through the arrays
         return ["manager_calls", "unlock"]
     }
     
     func NotGranted() -> [String] {
+        // Just here as a place holder to understand what you meant by looping through the arrays
         return ["whitelist", "seatbelt"]
     }
     
@@ -44,10 +46,12 @@ internal class NotificationPermissionsEvaluator: PermissionsService {
 
 internal class LocationPermissionsEvaluator: PermissionsService {
     func Granted() -> [String] {
+        // Just here as a place holder to understand what you meant by looping through the arrays
         return ["one", "three"]
     }
     
     func NotGranted() -> [String] {
+        // Just here as a place holder to understand what you meant by looping through the arrays
         return ["four", "two"]
     }
     
